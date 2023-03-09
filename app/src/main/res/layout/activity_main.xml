@@ -14,7 +14,14 @@
         android:text="@string/name"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:textColor="@color/black"/>
+        style="@style/NameStyle" />
+
+    <ImageView
+        android:id="@+id/star_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        android:contentDescription="Yellow Star" />
 
 </LinearLayout>
