@@ -17,22 +17,23 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
+    private var myName: MyName = MyName("Vamsi Madhav H")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
+        binding.myName = myName
 
         binding.button.setOnClickListener {
             addNickName(it)
         }
-
-
     }
 
     private fun addNickName(view: View) {
 
         binding.apply {
-            nickName.text = editTextTextPersonName.editableText.toString()
+            myName?.nickName = editTextTextPersonName.editableText.toString()
+            invalidateAll()
             nickName.visibility = View.VISIBLE
             view.visibility = View.GONE
             editTextTextPersonName.visibility = View.GONE
